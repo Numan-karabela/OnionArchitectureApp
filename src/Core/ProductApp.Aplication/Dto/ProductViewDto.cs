@@ -8,5 +8,6 @@ namespace ProductApp.Aplication.Dto
 {
     public class ProductViewDto
     {
+        public string name { get; set; }
     }
 }

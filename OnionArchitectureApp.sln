@@ -7,17 +7,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{17D21EB4-10B
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{D4A8997A-D42F-48F1-A9E1-ECEFD0B447E3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductApp.Domain", "src\Core\ProductApp.Domain\ProductApp.Domain.csproj", "{38492C17-DDE0-4925-90D5-48A40FBA480E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnionArchitectureApp.Domain", "src\Core\ProductApp.Domain\OnionArchitectureApp.Domain.csproj", "{38492C17-DDE0-4925-90D5-48A40FBA480E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductApp.Aplication", "src\Core\ProductApp.Aplication\ProductApp.Aplication.csproj", "{AC2BC34A-9B49-4271-9997-D0F4BF5E693A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnionArchitectureApp.Aplication", "src\Core\ProductApp.Aplication\OnionArchitectureApp.Aplication.csproj", "{AC2BC34A-9B49-4271-9997-D0F4BF5E693A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{6B56AD58-1CA6-4959-B480-53C0D674EC6B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductApp.Persistence", "src\Infrastructure\ProductApp.Persistence\ProductApp.Persistence.csproj", "{23D4AE68-0E60-443D-95F2-F2D834AB6572}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnionArchitectureApp.Persistence", "src\Infrastructure\ProductApp.Persistence\OnionArchitectureApp.Persistence.csproj", "{23D4AE68-0E60-443D-95F2-F2D834AB6572}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebApi", "WebApi", "{B1A66624-9E9D-46F8-B0FE-B94FB5EDFB16}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductApp.WebApi", "src\WebApi\ProductApp.WebApi\ProductApp.WebApi.csproj", "{FA683529-40F2-4ECA-BE03-4D5AD53CA07F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnionArchitectureApp.WebApi", "src\WebApi\ProductApp.WebApi\OnionArchitectureApp.WebApi.csproj", "{FA683529-40F2-4ECA-BE03-4D5AD53CA07F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
