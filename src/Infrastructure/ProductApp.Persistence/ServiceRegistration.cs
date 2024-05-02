@@ -15,7 +15,7 @@ namespace ProductApp.Persistence
     {
         public static void AddPersistenceService(this IServiceCollection services)
         {
-            services.AddDbContext<ProductDbContext>(p=>p.UseInMemoryDatabase("Db"));
+            services.AddDbContext<ProductDbContext>(ops=>ops.UseInMemoryDatabase("MemoryDb"));
             services.AddTransient<IProductResository,ProductRepository>();
 
 

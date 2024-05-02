@@ -1,4 +1,5 @@
-﻿using MediatR;
+﻿using AutoMapper;
+using MediatR;
 using ProductApp.Aplication.Dto;
 using ProductApp.Aplication.İnterfaces.Repositorys;
 using System;
@@ -12,6 +13,12 @@ namespace ProductApp.Aplication.Features.Queries.GetAllProduct
     public class GetAllProductQueryHandler : IRequestHandler<GetAllProductQueryRequest, List<ProductViewDto>>
     {
         private readonly IProductResository _resository;
+        IMapper mapper;
+
+        public GetAllProductQueryHandler(IMapper mapper)
+        {
+            this.mapper = mapper;
+        }
 
         public GetAllProductQueryHandler(IProductResository resository)
         {
@@ -19,8 +26,7 @@ namespace ProductApp.Aplication.Features.Queries.GetAllProduct
         }
 
         public async Task<List<ProductViewDto>> Handle(GetAllProductQueryRequest request, CancellationToken cancellationToken)
-        {
-
+        { 
             var  products = await _resository.GettAllAsync();
             
             return products.Select(i => new ProductViewDto()

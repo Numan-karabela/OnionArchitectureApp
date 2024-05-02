@@ -10,7 +10,9 @@ namespace ProductApp.Persistence.Context
 {
     public class ProductDbContext:DbContext
     {
-
+        public ProductDbContext(DbContextOptions<ProductDbContext> options) : base(options)
+        {
+        }
 
         public DbSet<Product> products{ get; set; }
 
@@ -19,15 +21,12 @@ namespace ProductApp.Persistence.Context
         {
 
             modelBuilder.Entity<Product>().HasData(
-                new Product() { Id=new Guid(),Name="Numan1",Quantity=1000,Value=11},
-                new Product() { Id=new Guid(),Name="Numan2",Quantity=3000,Value=12},
-                new Product() { Id=new Guid(),Name="Numan3",Quantity=4000,Value=13}
-            );
+                new Product() { Id=Guid.NewGuid(), Name="Numan1",Quantity=1000,Value=11},
+                new Product() { Id=Guid.NewGuid(), Name="Numan2",Quantity=3000,Value=12},
+                new Product() { Id=Guid.NewGuid(), Name="Numan3",Quantity=4000,Value=13}
+        );
 
             base.OnModelCreating(modelBuilder);
-        }
-
-
-
+        } 
     }
 }

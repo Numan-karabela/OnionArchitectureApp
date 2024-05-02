@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using MediatR;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using ProductApp.Aplication.Features.Queries.GetAllProduct;
 using ProductApp.Aplication.İnterfaces.Repositorys; 
 
 namespace ProductApp.WebApi.Controllers
@@ -8,18 +10,18 @@ namespace ProductApp.WebApi.Controllers
     [ApiController]
     public class ProductController : ControllerBase
     {
-        private readonly IProductResository _productResository;
+        private readonly IMediator mediator;
 
-        public ProductController(IProductResository productResository)
+        public ProductController(IMediator mediator)
         {
-            _productResository = productResository;
+            this.mediator = mediator;
         }
 
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            var entity =await _productResository.GettAllAsync();
-            return Ok(entity);
+            var Query = new GetAllProductQueryRequest(); 
+            return Ok(await mediator.Send(Query));
 
         }
     }
