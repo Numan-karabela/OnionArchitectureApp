@@ -2,6 +2,7 @@
 using MediatR;
 using ProductApp.Aplication.Dto;
 using ProductApp.Aplication.İnterfaces.Repositorys;
+using ProductApp.Aplication.Wrappers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace ProductApp.Aplication.Features.Queries.GetAllProduct
 {
-    public class GetAllProductQueryHandler : IRequestHandler<GetAllProductQueryRequest, List<ProductViewDto>>
+    public class GetAllProductQueryHandler : IRequestHandler<GetAllProductQueryRequest, ServiceResponse<List<ProductViewDto>>>
     {
         private readonly IProductResository _resository;
         IMapper mapper;
@@ -25,16 +26,15 @@ namespace ProductApp.Aplication.Features.Queries.GetAllProduct
             _resository = resository;
         }
 
-        public async Task<List<ProductViewDto>> Handle(GetAllProductQueryRequest request, CancellationToken cancellationToken)
+        public async Task<ServiceResponse<List<ProductViewDto>>> Handle(GetAllProductQueryRequest request, CancellationToken cancellationToken)
         { 
             var  products = await _resository.GettAllAsync();
             
-            return products.Select(i => new ProductViewDto()
-            {
-                name = i.Name,
-            }).ToList();
-         
-          
+           var a= mapper.Map<List<ProductViewDto>>(products);
+
+            return new ServiceResponse<List<ProductViewDto>>(a);
+
+
         }
     }
 }
